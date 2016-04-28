@@ -1,0 +1,57 @@
+<header class="hero-unit" id="banner">
+	<div class="container">
+		<h1>Projects</h1>
+		<p class="lead">Add and remove projects.</p>
+	</div>
+</header>
+
+<div class="container">
+	<div class="row">
+		<form class="project-form">
+			<div class="col-md-6">
+
+				<div class="form-group">
+					<label for="projectName">Name</label>
+					<input type="text" class="form-control input-sm" placeholder="Add a new project here." id="projectName" ng-model="$ctrl.newProject">
+				</div>
+				<div class="form-group">
+					<label for="projectDescription">Description</label>
+					<input type="text" class="form-control input-sm" placeholder="Project description here." id="projectDescription" ng-model="$ctrl.newProjectInfo">
+				</div>
+				<div class="form-group">
+					<label for="projectFacebookUrl">Facebook URL</label>
+					<input type="text" class="form-control input-sm" placeholder="https://www.facebook.com/umcom" id="projectFacebookUrl" ng-model="$ctrl.newProjectFacebookUrl">
+				</div>
+				<div class="form-group">
+					<label for="projectTwitterHandle">Twitter Handle</label>
+					<input type="text" class="form-control input-sm" placeholder="@mattscottcrum" id="projectTwitterHandle" ng-model="$ctrl.newProjectTwitterHandle">
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="form-group">
+					<label for="projectSummary">Summary</label>
+					<input type="text" class="form-control input-sm" placeholder="Project Summary here." id="projectSummary" ng-model="$ctrl.newProjectSummary">
+				</div>
+				<div class="form-group">
+					<label for="projectAddressCity">City</label>
+					<input type="text" class="form-control input-sm" placeholder="City" id="projectAddressCity" ng-model="$ctrl.newProjectAddressCity">
+				</div>
+				<div class="form-group">
+					<label for="projectAddressCountry">Country</label>
+					<input type="text" class="form-control input-sm" placeholder="Country" id="projectAddressCountry" ng-model="$ctrl.newProjectAddressCountry">
+				</div>
+				<span class="input-group-btn">
+					<button type="submit" class="btn btn-primary" ng-click="$ctrl.addProject()">Add New</button>
+				</span>
+			</div>
+
+		</form>
+	</div>
+
+<div class="row">
+		<h1 class="page-header">Features:</h1>
+		<ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6" ng-repeat="project in $ctrl.awesomeProjects">
+			<li><a href="#" uib-tooltip="{{project.info}} - {{project.facebookUrl}} -  {{project.twitterHandle}} - {{project.summary}} - {{project.address.city}} - {{project.address.country}}">{{project.name}}<button type="button" class="close" ng-click="$ctrl.deleteProject(project)">&times;</button></a></li>
+		</ul>
+	</div>
+</div>
