@@ -10,7 +10,8 @@ angular.module('uwazi2App', [
   'btford.socket-io',
   'ui.router',
   'ui.bootstrap',
-  'validation.match'
+  'validation.match',
+  'xeditable'
 ])
   .config(function($urlRouterProvider, $locationProvider) {
     $urlRouterProvider

@@ -2,8 +2,9 @@
   <p>The delete user and user index api routes are restricted to users with the 'admin' role.</p>
 	    <div class="project-info">
 	        <h2>Project name: {{project.name}}</h2><br>
+          <a href="#" editable-text="project.name" onbeforesave="$ctrl.updateProject($data)">{{ project.name || 'empty' }}</a>
           <div class="form-group">
-  					<label for="projectName">Project Name</label>
+  					<label for="projectName">Project Name</label>{{loadingProject}}
   					<input type="text" class="form-control input-sm" placeholder="{{project.name}}" id="projectName" ng-model="$ctrl.newProject">
   				</div>
 	    </div>
