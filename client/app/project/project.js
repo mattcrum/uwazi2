@@ -6,5 +6,11 @@ angular.module('uwazi2App')
       .state('project', {
         url: '/project',
         template: '<project></project>'
+      })
+      .state('newProject', {
+        url: '/project/new',
+        controller: 'NewProjectCtrl',
+        templateUrl: 'app/project/newProject/newProject.html'
+        //template: '<project></project>'
       });
   });
