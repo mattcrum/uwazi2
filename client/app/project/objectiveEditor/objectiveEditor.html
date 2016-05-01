@@ -1,0 +1,24 @@
+<header class="hero-unit" id="banner">
+	<div class="container">
+		<h1>Add a New Objective</h1>
+		<p class="lead">Add and remove projects.</p> msg={{message}}
+	</div>
+</header>
+
+<div class="container">
+	<div class="row">
+		<form class="project-form">
+			<div class="col-md-6">
+
+				<div class="form-group">
+					<label for="projectName">New objective</label>
+					<input type="text" class="form-control input-sm" placeholder="Add a new objective here." id="projectName" ng-model="obj.summary">
+				</div>
+
+				<span class="input-group-btn">
+					<button type="submit" class="btn btn-primary" ng-click="addObjective(obj)">Add New</button>
+				</span>
+			</div>
+
+		</form>
+	</div>

@@ -11,6 +11,7 @@
 
 import _ from 'lodash';
 import Project from './project.model';
+import Objective from './project.model';
 
 function respondWithResult(res, statusCode) {
   statusCode = statusCode || 200;
@@ -22,6 +23,16 @@ function respondWithResult(res, statusCode) {
 }
 
 function saveUpdates(updates) {
+  return function(entity) {
+    var updated = _.merge(entity, updates);
+    return updated.save()
+      .then(updated => {
+        return updated;
+      });
+  };
+}
+
+function saveObjectives(updates) {
   return function(entity) {
     var updated = _.merge(entity, updates);
     return updated.save()
@@ -99,4 +110,16 @@ export function destroy(req, res) {
     .then(handleEntityNotFound(res))
     .then(removeEntity(res))
     .catch(handleError(res));
+}
+
+// Adds objective to a Project in the DB
+export function addObjective(req, res) {
+
+  return Project.findOneAndUpdate(
+    {_id: req.params.id},
+    {$push: {objectives: req.body}},
+    {upsert:true, 'new':true}
+  )
+  .then(respondWithResult(res))
+  .catch(handleError(res));
 }

@@ -18,5 +18,11 @@ angular.module('uwazi2App')
         controller: 'ViewProjectCtrl',
         templateUrl: 'app/project/viewProject/viewProject.html'
         //template: '<project></project>'
+      })
+      .state('objectiveEditor', {
+        url: '/project/:projectId/objectives',
+        controller: 'ObjectiveEditorCtrl',
+        templateUrl: 'app/project/objectiveEditor/objectiveEditor.html'
+        //template: '<project></project>'
       });
   });
