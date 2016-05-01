@@ -12,5 +12,11 @@ angular.module('uwazi2App')
         controller: 'NewProjectCtrl',
         templateUrl: 'app/project/newProject/newProject.html'
         //template: '<project></project>'
+      })
+      .state('viewProject', {
+        url: '/project/:projectId',
+        controller: 'ViewProjectCtrl',
+        templateUrl: 'app/project/viewProject/viewProject.html'
+        //template: '<project></project>'
       });
   });
