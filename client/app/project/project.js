@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('uwazi2App')
+var app = angular.module('uwazi2App')
   .config(function ($stateProvider) {
     $stateProvider
       .state('project', {
@@ -10,7 +10,8 @@ angular.module('uwazi2App')
       .state('newProject', {
         url: '/project/new',
         controller: 'NewProjectCtrl',
-        templateUrl: 'app/project/newProject/newProject.html'
+        templateUrl: 'app/project/newProject/newProject.html',
+        controllerAs: 'vm'
         //template: '<project></project>'
       })
       .state('viewProject', {
@@ -24,5 +25,16 @@ angular.module('uwazi2App')
         controller: 'ObjectiveEditorCtrl',
         templateUrl: 'app/project/objectiveEditor/objectiveEditor.html'
         //template: '<project></project>'
+      })
+      .state('updateEditor', {
+        url: '/project/:projectId/objectives',
+        controller: 'UpdateEditorCtrl',
+        templateUrl: 'app/project/objectiveEditor/updateEditor.html'
+        //template: '<project></project>'
+      })
+      .state('uploadPhoto', {
+        url: '/new-image',
+        controller: 'FileUploadCtrl',
+        templateUrl: 'app/project/fileUpload/newFile.html'
       });
   });
