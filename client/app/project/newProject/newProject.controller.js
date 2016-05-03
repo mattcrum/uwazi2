@@ -20,7 +20,7 @@ var app = angular.module('uwazi2App');
       },
       {
         key: 'description',
-        type: 'input',
+        type: 'textarea',
         templateOptions: {
           type: 'text',
           label: 'Description',

@@ -6,6 +6,8 @@
 </header>
 
 <div class="container">
+	<div class"row">
+	</div>
 	<div class="col-md-9">
 		<div class="block">
 			<div class="thumbnail">
@@ -30,24 +32,17 @@
 				</div>
 			</div>
 
-			<div class="panel panel-default">
-				<div class="panel-heading">
-					<h3 class="panel-title">{{project.name}}</h3>
-				</div>
-				<div class="panel-body">
-					Panel content
-				</div>
-			</div>
+
 		</div>
 	</div>
-	<div class=".col-xs-3">
+	<div class="col-xs-3">
 		<div class="block">
-			<p>Project Name: {{project.name}}</p>
-			<p>Summary: {{project.summary}}</p>
-			<p>Facebook: {{project.facebookUrl}}</p>
-			<p>Twitter Handle: {{project.twitterHandle}}</p>
-			<p>City: {{project.address.city}}</p>
-			<p>Country: {{project.address.country}}</p>
+			<h6>Project Name:</h6> <p>{{project.name}}</p>
+			<h6>Summary:</h6> <p>{{project.summary}}</p>
+			<h6>Facebook:</h6><p> {{project.facebookUrl}}</p>
+			<h6>Twitter Handle:</h6><p> {{project.twitterHandle}}</p>
+			<h6>City:</h6><p> {{project.address.city}}</p>
+			<h6>Country:</h6><p> {{project.address.country}}</p>
 		</div>
 
 	</div>
