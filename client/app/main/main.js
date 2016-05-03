@@ -5,6 +5,7 @@ angular.module('uwazi2App')
     $stateProvider
       .state('main', {
         url: '/',
-        template: '<main></main>'
+        controller: "MainCtrl",
+        templateUrl: 'app/main/main.html'
       });
   });

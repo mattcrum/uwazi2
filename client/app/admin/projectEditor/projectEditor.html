@@ -2,10 +2,54 @@
   <p>The delete user and user index api routes are restricted to users with the 'admin' role.</p>
 	    <div class="project-info">
 	        <h2>Project name: {{project.name}}</h2><br>
-          <a href="#" editable-text="project.name" onbeforesave="$ctrl.updateProject($data)">{{ project.name || 'empty' }}</a>
+          <formly-form model="vm.project" fields="vm.projectFields">
+            <button type="submit" class="btn btn-default" ng-click="vm.submit(vm.user)">Submit</button>
+          </formly-form>
+          <br />
+          <div><a href="#" editable-text="project.name" onbeforesave="$ctrl.updateProject($data)">{{ project.name || 'empty' }}</a></div>
+          <div><a href="#" editable-text="project.description" onbeforesave="$ctrl.updateProject($data)">{{ project.description || 'empty' }}</a></div>
+          <div><a href="#" editable-text="project.summary" onbeforesave="$ctrl.updateProject($data)">{{ project.summary || 'empty' }}</a></div>
+
           <div class="form-group">
-  					<label for="projectName">Project Name</label>{{loadingProject}}
-  					<input type="text" class="form-control input-sm" placeholder="{{project.name}}" id="projectName" ng-model="$ctrl.newProject">
+            <form class="project-form">
+        			<div class="col-md-6">
+
+        				<div class="form-group">
+        					<label for="projectName">Name</label>
+        					<input type="text" class="form-control input-sm" placeholder="Add a new project here." id="projectName" ng-model="inst.newProject">
+        				</div>
+        				<div class="form-group">
+        					<label for="projectDescription">Description</label>
+        					<input type="text" class="form-control input-sm" placeholder="Project description here." id="projectDescription" ng-model="inst.newProjectInfo">
+        				</div>
+        				<div class="form-group">
+        					<label for="projectFacebookUrl">Facebook URL</label>
+        					<input type="text" class="form-control input-sm" placeholder="https://www.facebook.com/umcom" id="projectFacebookUrl" ng-model="inst.newProjectFacebookUrl">
+        				</div>
+        				<div class="form-group">
+        					<label for="projectTwitterHandle">Twitter Handle</label>
+        					<input type="text" class="form-control input-sm" placeholder="@mattscottcrum" id="projectTwitterHandle" ng-model="inst.newProjectTwitterHandle">
+        				</div>
+        			</div>
+        			<div class="col-md-6">
+        				<div class="form-group">
+        					<label for="projectSummary">Summary</label>
+        					<input type="text" class="form-control input-sm" placeholder="Project Summary here." id="projectSummary" ng-model="inst.newProjectSummary">
+        				</div>
+        				<div class="form-group">
+        					<label for="projectAddressCity">City</label>
+        					<input type="text" class="form-control input-sm" placeholder="City" id="projectAddressCity" ng-model="inst.newProjectAddressCity">
+        				</div>
+        				<div class="form-group">
+        					<label for="projectAddressCountry">Country</label>
+        					<input type="text" class="form-control input-sm" placeholder="Country" id="projectAddressCountry" ng-model="inst.newProjectAddressCountry">
+        				</div>
+        				<span class="input-group-btn">
+        					<button type="submit" class="btn btn-primary" ng-click="$ctrl.updateProject(inst)">Add New</button>
+        				</span>
+        			</div>
+
+        		</form>
   				</div>
 	    </div>
 </div>

@@ -31,6 +31,9 @@ require('./config/socketio').default(socketio);
 require('./config/express').default(app);
 require('./routes').default(app);
 
+var multer  = require('multer');
+var upload = multer({ dest: 'uploads/' });
+
 // Start server
 function startServer() {
   app.angularFullstack = server.listen(config.port, config.ip, function() {

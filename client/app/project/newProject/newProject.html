@@ -4,46 +4,8 @@
 		<p class="lead">Add and remove projects.</p> msg={{message}}
 	</div>
 </header>
-
 <div class="container">
-	<div class="row">
-		<form class="project-form">
-			<div class="col-md-6">
-
-				<div class="form-group">
-					<label for="projectName">Name</label>
-					<input type="text" class="form-control input-sm" placeholder="Add a new project here." id="projectName" ng-model="newproj.newProject">
-				</div>
-				<div class="form-group">
-					<label for="projectDescription">Description</label>
-					<input type="text" class="form-control input-sm" placeholder="Project description here." id="projectDescription" ng-model="newproj.newProjectInfo">
-				</div>
-				<div class="form-group">
-					<label for="projectFacebookUrl">Facebook URL</label>
-					<input type="text" class="form-control input-sm" placeholder="https://www.facebook.com/umcom" id="projectFacebookUrl" ng-model="newproj.newProjectFacebookUrl">
-				</div>
-				<div class="form-group">
-					<label for="projectTwitterHandle">Twitter Handle</label>
-					<input type="text" class="form-control input-sm" placeholder="@mattscottcrum" id="projectTwitterHandle" ng-model="newproj.newProjectTwitterHandle">
-				</div>
-			</div>
-			<div class="col-md-6">
-				<div class="form-group">
-					<label for="projectSummary">Summary</label>
-					<input type="text" class="form-control input-sm" placeholder="Project Summary here." id="projectSummary" ng-model="newproj.newProjectSummary">
-				</div>
-				<div class="form-group">
-					<label for="projectAddressCity">City</label>
-					<input type="text" class="form-control input-sm" placeholder="City" id="projectAddressCity" ng-model="newproj.newProjectAddressCity">
-				</div>
-				<div class="form-group">
-					<label for="projectAddressCountry">Country</label>
-					<input type="text" class="form-control input-sm" placeholder="Country" id="projectAddressCountry" ng-model="newproj.newProjectAddressCountry">
-				</div>
-				<span class="input-group-btn">
-					<button type="submit" class="btn btn-primary" ng-click="addProject(newproj)">Add New</button>
-				</span>
-			</div>
-
-		</form>
-	</div>
+<formly-form model="vm.fields" fields="vm.projectFields">
+	<button type="submit" class="btn btn-default" ng-click="vm.submit(vm.fields)">Submit</button>
+</formly-form>
+</div>

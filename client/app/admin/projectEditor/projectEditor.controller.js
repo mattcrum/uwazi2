@@ -41,6 +41,89 @@
     }
 
       $onInit(){
+
+        var vm = this;
+
+        vm.project = {};
+
+        // note, these field types will need to be
+        // pre-defined. See the pre-built and custom templates
+        // http://docs.angular-formly.com/v6.4.0/docs/custom-templates
+        vm.projectFields = [
+          {
+            key: 'name',
+            type: 'input',
+            templateOptions: {
+              type: 'text',
+              label: 'Name',
+              placeholder: 'Enter Name'
+            }
+          },
+          {
+            key: 'descriptions',
+            type: 'input',
+            templateOptions: {
+              type: 'text',
+              label: 'Description',
+              placeholder: 'Description'
+            }
+          },
+          {
+            key: 'twitterHandle',
+            type: 'input',
+            templateOptions: {
+              type: 'text',
+              label: 'Twitter Handle',
+              placeholder: '@mattscottcrum'
+            }
+          },
+          {
+            key: 'facebookUrl',
+            type: 'input',
+            templateOptions: {
+              type: 'text',
+              label: 'Facebook URL',
+              placeholder: 'http://facebook.com/matt.crum'
+            }
+          },
+          {
+            key: 'summary',
+            type: 'input',
+            templateOptions: {
+              type: 'text',
+              label: 'Summary',
+              placeholder: 'Summary'
+            }
+          },
+          {
+            key: 'address',
+            type: 'input',
+            templateOptions: {
+              type: 'text',
+              label: 'Address'
+            },
+            fieldGroup: [{
+              key: 'city',
+              type: 'input',
+              templateOptions: {
+                required: true,
+                type: 'text',
+                label: 'City'
+              }
+            },
+            {
+              key: 'country',
+              type: 'input',
+              templateOptions: {
+                required: true,
+                type: 'text',
+                label: 'Country'
+              }
+            }]
+          }
+        ];
+      }
+
         // this.$http.get('/api/projects/' + this.$stateParams.projectId)
         //   .success(function(res) {
         //     this.awesomeProjects = res;
@@ -55,13 +138,11 @@
         //   .finally(function() {
         //     this.$scope.loadingProject = true;
         //   });
-      }
+
 
 
     updateProject(data) {
-      this.$http.put('/api/projects/' + this.projectId, {
-        name: data
-      })
+      this.$http.put('/api/projects/' + this.projectId, data)
       .success(function(res){
         //$scope.project.name = res;
       });
@@ -74,5 +155,6 @@
       templateUrl: 'app/admin/projectEditor/projectEditor.html',
       controller: ProjectEditorComponent
     });
+
 
 })();
