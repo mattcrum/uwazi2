@@ -2,7 +2,7 @@
 (function() {
 
   class ProjectEditorComponent {
-    constructor($scope, $http, $stateParams, $state, $sanitize, socket) {
+    constructor($scope, $http, $stateParams) {
       this.message = 'Hello';
       this.awesomeProjects = [];
       this.$http = $http;
@@ -141,12 +141,12 @@
 
 
 
-    updateProject(data) {
-      this.$http.put('/api/projects/' + this.projectId, data)
-      .success(function(res){
-        //$scope.project.name = res;
-      });
-    }
+    // updateProject(data) {
+    //   this.$http.put('/api/projects/' + this.projectId, data)
+    //   .success(function(res){
+    //     $scope.project.name = res;
+    //   });
+    // }
 
   }
 

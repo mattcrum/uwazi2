@@ -3,6 +3,15 @@
 var app = angular.module('uwazi2App');
 
 app.run(function(formlyConfig) {
+  function camelize(string) {
+    string = string.replace(/[\-_\s]+(.)?/g, function(match, chr) {
+      return chr ? chr.toUpperCase() : '';
+    });
+    // Ensure 1st char is always lowercase
+    return string.replace(/^([A-Z])/, function(match, chr) {
+      return chr ? chr.toLowerCase() : '';
+    });
+  }
   var attributes = [
     'date-disabled',
     'custom-class',
@@ -64,21 +73,13 @@ app.run(function(formlyConfig) {
 
       $scope.datepicker.opened = false;
 
-      $scope.datepicker.open = function ($event) {
+      $scope.datepicker.open = function () {
         $scope.datepicker.opened = !$scope.datepicker.opened;
       };
     }]
   });
 
-  function camelize(string) {
-    string = string.replace(/[\-_\s]+(.)?/g, function(match, chr) {
-      return chr ? chr.toUpperCase() : '';
-    });
-    // Ensure 1st char is always lowercase
-    return string.replace(/^([A-Z])/, function(match, chr) {
-      return chr ? chr.toLowerCase() : '';
-    });
-  }
+
 });
 
 
@@ -143,9 +144,9 @@ app.run(function(formlyConfig) {
             proj.id = response.data._id;
             $state.go('viewProject', {projectId: proj.id});
           }, function errorCallback(response) {
-            //console.log("error:" + response);
+            console.log('error:' + response);
           });
-      }
+      };
     $scope.addObjective = function (obj) {
         $http.post('/api/projects/'+$stateParams.projectId, {
   				summary: obj.summary
@@ -153,10 +154,10 @@ app.run(function(formlyConfig) {
             console.log(response);
             $state.go('viewProject', {projectId: response.data._id});
           }, function errorCallback(response) {
-            console.log("error:");
+            console.log('error');
             console.log(response);
           });
 
 
-      }
+      };
   });

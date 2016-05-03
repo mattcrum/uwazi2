@@ -82,13 +82,13 @@ var app = angular.module('uwazi2App');
             proj.id = response.data._id;
             $state.go('viewProject', {projectId: proj.id});
           }, function errorCallback(response) {
-            //console.log("error:" + response);
+            console.log('error' + response);
           });
         // proj.newProject = '';
         // proj.newProjectInfo = '';
 
 
-      }
+      };
     $scope.addProject = function (proj) {
         $http.post('/api/projects', {
   				name: proj.newProject,
@@ -103,11 +103,11 @@ var app = angular.module('uwazi2App');
             proj.id = response.data._id;
             $state.go('viewProject', {projectId: proj.id});
           }, function errorCallback(response) {
-            //console.log("error:" + response);
+            console.log('error'+ response);
           });
         proj.newProject = '';
   			proj.newProjectInfo = '';
 
 
-      }
+      };
   });

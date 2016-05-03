@@ -1,6 +1,6 @@
 'use strict';
 
-var app = angular.module('uwazi2App', [
+angular.module('uwazi2App', [
   'uwazi2App.auth',
   'uwazi2App.admin',
   'uwazi2App.constants',

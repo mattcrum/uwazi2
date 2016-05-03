@@ -1,6 +1,6 @@
 'use strict';
 
-var app = angular.module('uwazi2App')
+angular.module('uwazi2App')
   .config(function ($stateProvider) {
     $stateProvider
       .state('project', {

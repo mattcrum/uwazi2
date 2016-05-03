@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('uwazi2App')
-  .controller('UpdateEditorCtrl', function($scope, $http, $stateParams, $state, $location, $upload, cloudinary) {
+  .controller('UpdateEditorCtrl', function($scope, $http) {
       $scope.message = 'Hello';
       this.$http = $http;
 
@@ -16,10 +16,9 @@ angular.module('uwazi2App')
           }).then(function successCallback(response) {
             console.log(response);
           }, function errorCallback(response) {
-            //console.log("error:" + response);
+            console.log('error' + response);
           });
-
-        }
+        };
 
 
       });
