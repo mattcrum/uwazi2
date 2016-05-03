@@ -1,20 +1,54 @@
 <header class="hero-unit" id="banner">
 	<div class="container">
 		<h1>{{project.name}}</h1>
-		<p class="lead">{{project.description}}</p>
+		<p class="lead">{{project.summary}}</p>
 	</div>
 </header>
 
 <div class="container">
+	<div class="col-md-9">
+		<div class="block">
+			<div class="thumbnail">
+				<img src="http://placehold.it/640x150?text=project+image+here" alt="">
+				<div class="caption">
+					<p>{{project.description}}
+						<table class="table table-condensed">
+							<thead>
+								<th>Objectives of project</th>
+								<th>Start Date</th>
+								<th>Completion Date (Est)</th>
+							</thead>
+							<tr ng-repeat="objective in project.objectives">
+								<td>{{objective.summary}}</td>
+								<td>{{objective.startDate | date:'MMM-yyyy'}}</td>
+								<td>{{objective.completionDate | date:'MMM-yyyy'}}</td>
+							</tr>
+						</table>
+						<a ui-sref="objectiveEditor({projectId: id})" type="button" class="btn btn-default btn-sm">
+							<span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add Objective
+						</a>
+				</div>
+			</div>
 
-	<div class=".col-xs-4">
-		<p>Project Name: {{project.name}}</p>
-    <p>Description: {{project.description}}</p>
-    <p>Summary: {{project.summary}}</p>
-    <p>Facebook: {{project.facebookUrl}}</p>
-    <p>Twitter Handle: {{project.twitterHandle}}</p>
-    <p>City: {{project.address.city}}</p>
-    <p>Country: {{project.address.country}}</p>
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">{{project.name}}</h3>
+				</div>
+				<div class="panel-body">
+					Panel content
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class=".col-xs-3">
+		<div class="block">
+			<p>Project Name: {{project.name}}</p>
+			<p>Summary: {{project.summary}}</p>
+			<p>Facebook: {{project.facebookUrl}}</p>
+			<p>Twitter Handle: {{project.twitterHandle}}</p>
+			<p>City: {{project.address.city}}</p>
+			<p>Country: {{project.address.country}}</p>
+		</div>
 
 	</div>
 </div>

@@ -35,6 +35,19 @@ module.exports = function (grunt) {
       server: 'server',
       dist: 'dist'
     },
+    eol: {
+            dist: {
+                options: {
+                    eol: 'lf',
+                    replace: true
+                },
+                files: [
+                    {
+                        src: ['.client/app/bower_components/angular-formly-templates-bootstrap/dist/*.js'],
+                    }
+                ]
+            }
+        },
     express: {
       options: {
         port: process.env.PORT || 9000

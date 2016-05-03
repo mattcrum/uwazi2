@@ -19,6 +19,15 @@ var app = angular.module('uwazi2App');
         }
       },
       {
+        key: 'description',
+        type: 'input',
+        templateOptions: {
+          type: 'text',
+          label: 'Description',
+          placeholder: 'Description'
+        }
+      },
+      {
         key: 'twitterHandle',
         type: 'input',
         templateOptions: {

@@ -23,7 +23,8 @@ var app = angular.module('uwazi2App')
       .state('objectiveEditor', {
         url: '/project/:projectId/objectives',
         controller: 'ObjectiveEditorCtrl',
-        templateUrl: 'app/project/objectiveEditor/objectiveEditor.html'
+        templateUrl: 'app/project/objectiveEditor/objectiveEditor.html',
+        controllerAs: 'vm'
         //template: '<project></project>'
       })
       .state('updateEditor', {

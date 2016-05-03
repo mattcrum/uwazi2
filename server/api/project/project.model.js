@@ -14,12 +14,14 @@ var objectiveSubschema = new mongoose.Schema({
 	summary: String,
 	description: String,
 	completionDate: Date,
+  startDate: Date
 
 });
 
 var ProjectSchema = new mongoose.Schema({
   name: String,
 	summary: String,
+  description: String,
   info: String,
 	owner: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }],
 	location: {type: String },
