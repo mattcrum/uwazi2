@@ -74,6 +74,16 @@ export function show(req, res) {
     .catch(handleError(res));
 }
 
+// Gets a single Update from the DB
+export function showp(req, res) {
+  return Update.find({
+    projectId: req.params.id
+  }).exec()
+    .then(handleEntityNotFound(res))
+    .then(respondWithResult(res))
+    .catch(handleError(res));
+}
+
 // Creates a new Update in the DB
 export function create(req, res) {
   return Update.create(req.body)
