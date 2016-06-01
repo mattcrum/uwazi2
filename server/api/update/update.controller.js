@@ -78,7 +78,9 @@ export function show(req, res) {
 export function showp(req, res) {
   return Update.find({
     projectId: req.params.id
-  }).exec()
+  })
+  .sort({datePosted: 'desc'})
+  .exec()
     .then(handleEntityNotFound(res))
     .then(respondWithResult(res))
     .catch(handleError(res));

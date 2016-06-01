@@ -33,7 +33,7 @@ angular.module('uwazi2App')
             console.log(response);
             console.log($stateParams.projectId);
             $state.go('viewProject', {
-              projectId: data.id
+              projectId: $stateParams.projectId
             });
           }, function errorCallback(response) {
             console.log('error:' + response);

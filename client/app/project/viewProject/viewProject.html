@@ -33,9 +33,18 @@
 			</div>
 		</div>
 		<div class="block">
-			<a ui-sref="objectiveEditor({projectId: id})" type="button" class="btn btn-primary">
-				<span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add Status Update
-			</a>
+
+				<div ng-repeat="update in updates">
+					<div class="thumbnail">
+					<h4>{{update.title}}</h3>
+						<div>Created on {{update.datePosted | date:"MM/dd/yyyy 'at' h:mma"}}</div>
+					{{update.bodyText}}
+				</div>
+				</div>
+				<a ui-sref="updateEditor({projectId: id})" type="button" class="btn btn-primary">
+					<span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add Status Update
+				</a>
+
 		</div>
 	</div>
 	<div class="col-xs-3">
