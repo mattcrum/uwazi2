@@ -11,7 +11,7 @@
 	<div class="col-md-9">
 		<div class="block">
 			<div class="thumbnail">
-				<img src="http://placehold.it/640x150?text=project+image+here" alt="">
+				<img src="http://placekitten.com/640/150" alt="Project Picture">
 				<div class="caption">
 					<p>{{project.description}}
 						<table class="table table-condensed">
@@ -31,12 +31,16 @@
 						</a>
 				</div>
 			</div>
-
-
+		</div>
+		<div class="block">
+			<a ui-sref="objectiveEditor({projectId: id})" type="button" class="btn btn-primary">
+				<span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add Status Update
+			</a>
 		</div>
 	</div>
 	<div class="col-xs-3">
 		<div class="block">
+				<img src="http://placehold.it/300x200" alt="Project Picture">
 			<h6>Project Name:</h6> <p>{{project.name}}</p>
 			<h6>Summary:</h6> <p>{{project.summary}}</p>
 			<h6>Facebook:</h6><p> {{project.facebookUrl}}</p>
@@ -44,6 +48,5 @@
 			<h6>City:</h6><p> {{project.address.city}}</p>
 			<h6>Country:</h6><p> {{project.address.country}}</p>
 		</div>
-
 	</div>
 </div>

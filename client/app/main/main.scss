@@ -19,9 +19,17 @@
   color: #F5F5F5;
   text-align: center;
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
-  background: #4393B9;
+  background: #E4DD2B;
 }
 
 .navbar-text {
   margin-left: 15px;
+}
+
+.navbar{
+  min-height: 100px;
+}
+
+ul.nav.navbar-nav{
+  padding-top: 25px;
 }

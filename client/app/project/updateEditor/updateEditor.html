@@ -1,28 +1,14 @@
 <header class="hero-unit" id="banner">
 	<div class="container">
-		<h1>Add a New Project</h1>
-		<p class="lead">Add and remove projects.</p> msg={{message}}
+		<h1>Add a Status Update</h1>
+		<p class="lead">Add and remove projects.</p>
 	</div>
 </header>
 
 <div class="container">
 	<div class="row">
-		<form class="project-form">
-			<div class="col-md-6">
-
-				<div class="form-group">
-					<label for="updateTitle">Title</label>
-					<input type="text" class="form-control input-sm" placeholder="Add a new project update here." id="updateSummary" ng-model="new.newUpdateSummary">
-				</div>
-        <div class="form-group">
-					<label for="updateBodyText">Summary</label>
-					<input type="text" class="form-control input-sm" placeholder="Add project body here." id="updateBodyText" ng-model="new.newUpdateBodyText">
-				</div>
-
-				<span class="input-group-btn">
-					<button type="submit" class="btn btn-primary" ng-click="addProject(newproj)">Add New</button>
-				</span>
-			</div>
-
-		</form>
+    <formly-form model="vm.fields" fields="vm.updateFields">
+			<button type="submit" class="btn btn-default" ng-click="vm.submit(vm.fields)">Submit</button>
+		</formly-form>
 	</div>
+</div>
