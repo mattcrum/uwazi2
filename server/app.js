@@ -33,6 +33,7 @@ require('./routes').default(app);
 
 var multer  = require('multer');
 var upload = multer({ dest: 'uploads/' });
+//app.use(multer({ dest: './uploads/'}))
 
 // Start server
 function startServer() {
