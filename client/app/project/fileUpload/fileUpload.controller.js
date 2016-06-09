@@ -8,7 +8,6 @@ angular.module('uwazi2App')
            file.upload = Upload.upload({
                url: '/api/fileuploads',
                method: 'POST',
-               arrayKey: '', // default is '[i]'
                data: {file: file, 'username': $scope.username},//data: "data", // Any data needed to be submitted along with the files
                file: file
            }).then(function (resp) {

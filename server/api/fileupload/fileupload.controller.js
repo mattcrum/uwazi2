@@ -93,10 +93,12 @@ function toCloudinary(file_path) {
   return cloudinary.uploader.upload(file_path);
 }
 
+//right now only updates one at a time
 export function upload(req,res) {
+  //console.log(req);
   return toCloudinary(req.files.file[0].path)
     .then(respondWithResult(res))
-.catch(handleError(res));
+    .catch(handleError(res));
 
 }
 

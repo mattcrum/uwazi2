@@ -3,8 +3,8 @@
   <body ng-app="fileUpload" ng-controller="FileUploadCtrl">
        <h4>Upload on file select</h4>
 
-      <button ngf-select="uploadFiles($files)" multiple
-              accept="image/*" name="files" ngf-multiple="true">Select Files</button>
+      <button ngf-select="uploadFiles($files)"
+              accept="image/*" name="files" ngf-multiple="false">Select Files</button>
       <br>
       <br>Files:
       <ul>
@@ -16,6 +16,9 @@
           <div style="width:{{progress}}%" ng-bind="progress + '%'"></div>
       </span>
       {{errorMsg}}
+
+      <div>
+      </div>
   </body>
 
 </div>
