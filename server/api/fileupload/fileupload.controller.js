@@ -11,12 +11,14 @@
 
 import _ from 'lodash';
 import Fileupload from './fileupload.model';
+var cloudinary = require('cloudinary');
+cloudinary.config({
+  cloud_name: 'dxqgorubl',
+  api_key: '632573594347948',
+  api_secret: 'CYbMFwuB61ey4tHJfSmskBqhpM0'
+});
 
-export function upload(req,res) {
-  var file = req.files.file;
-  console.log(file.name);
-  console.log(file.type);
-}
+
 
 function respondWithResult(res, statusCode) {
   statusCode = statusCode || 200;
@@ -85,6 +87,17 @@ export function create(req, res) {
   return Fileupload.create(req.body)
     .then(respondWithResult(res, 201))
     .catch(handleError(res));
+}
+
+function toCloudinary(file_path) {
+  return cloudinary.uploader.upload(file_path);
+}
+
+export function upload(req,res) {
+  return toCloudinary(req.files.file[0].path)
+    .then(respondWithResult(res))
+.catch(handleError(res));
+
 }
 
 // Updates an existing Fileupload in the DB

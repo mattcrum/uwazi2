@@ -8,15 +8,16 @@ angular.module('uwazi2App')
            file.upload = Upload.upload({
                url: '/api/fileuploads',
                method: 'POST',
-               //data: "data", // Any data needed to be submitted along with the files
+               arrayKey: '', // default is '[i]'
+               data: {file: file, 'username': $scope.username},//data: "data", // Any data needed to be submitted along with the files
                file: file
            }).then(function (resp) {
-               console.log('Success!  Response: ' + resp.data);
+               console.log('Success uploaded. Response: ' + resp.data);
            }, function (resp) {
             console.log('Error status: ' + resp.status);
         }, function (evt) {
             var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
-            console.log('progress: ' + progressPercentage + '% ' );
+            console.log('progress: ' + progressPercentage + '% ');
         });
 
           //  file.upload.progress(function (evt) {
