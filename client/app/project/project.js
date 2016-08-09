@@ -26,6 +26,12 @@ angular.module('uwazi2App')
         templateUrl: 'app/project/objectiveEditor/objectiveEditor.html',
         controllerAs: 'vm'
       })
+      .state('objectiveView', {
+        url: '/project/:projectId/:objectiveId',
+        controller: 'ObjectiveViewCtrl',
+        templateUrl: 'app/project/objectiveView/objectiveView.html',
+        controllerAs: 'vm'
+      })
       .state('updateEditor', {
         url: '/project/:projectId/update',
         controller: 'UpdateEditorCtrl',

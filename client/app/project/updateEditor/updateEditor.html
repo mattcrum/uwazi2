@@ -8,7 +8,18 @@
 <div class="container">
 	<div class="row">
     <formly-form model="vm.fields" fields="vm.updateFields">
+			<div class="row">
+		    <button type="button" class="btn btn-primary btn-xs" ng-click="vm.open()">
+					<span class="glyphicon glyphicon-picture" aria-hidden="true"></span> Add Images
+				</button>
+			</div>
+			<div class="row">
 			<button type="submit" class="btn btn-default" ng-click="vm.submit(vm.fields)">Submit</button>
+		</div>
+		<div ng-repeat="photo in vm.photos">
+			hi, photo ids should be -> {{photos}}
+		</div>
 		</formly-form>
 	</div>
+
 </div>

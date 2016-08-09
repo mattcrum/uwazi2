@@ -14,11 +14,16 @@ angular.module('uwazi2App', [
   'validation.match',
   'xeditable',
   'formly',
-  'formlyBootstrap'
+  'formlyBootstrap',
+  'cloudinary'
 ])
   .config(function($urlRouterProvider, $locationProvider) {
     $urlRouterProvider
       .otherwise('/');
 
     $locationProvider.html5Mode(true);
-  });
+  })
+  .config(['cloudinaryProvider', function (cloudinaryProvider) {
+  cloudinaryProvider
+      .set("cloud_name", "dxqgorubl");
+}]);

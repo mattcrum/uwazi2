@@ -16,7 +16,7 @@ var UpdateSchema = new mongoose.Schema({
   datePosted: { type : Date, default: Date.now },
   dateModified: Date,
   bodyText: String,
-  photos: [PhotoSubschema],
+  photos: [{photoId: String}],
   active: Boolean,
   projectId: { type: mongoose.Schema.Types.ObjectId, ref: 'Project' }
 });

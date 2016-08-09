@@ -38,6 +38,13 @@
 					<div class="thumbnail">
 					<h4>{{update.title}}</h3>
 						<div>Created on {{update.datePosted | date:"MM/dd/yyyy 'at' h:mma"}}</div>
+						<div>
+							<span ng-repeat="photo in updates.photos">
+							<cl-image public-id="{{photo}}" class="thumbnail inline" format="jpg">
+								<cl-transformation height="150" width="150" crop="fill" gravity="north" />
+							</cl-image>
+						</span>
+						</div>
 					{{update.bodyText}}
 				</div>
 				</div>
